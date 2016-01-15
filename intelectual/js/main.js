@@ -48,39 +48,39 @@ MOD3.listenerMenu = function(){
 
 MOD3.slider = function(){
 	$.supersized({
-		// Functionality
-		slideshow               :   1,			// Slideshow on/off
-		autoplay				:	1,			// Slideshow starts playing automatically
-		start_slide             :   1,			// Start slide (0 is random)
-		stop_loop				:	0,			// Pauses slideshow on last slide
-		random					: 	0,			// Randomize slide order (Ignores start slide)
-		slide_interval          :   12000,		// Length between transitions
-		transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-		transition_speed		:	300,		// Speed of transition
-		new_window				:	1,			// Image links open in new window/tab
-		pause_hover             :   0,			// Pause slideshow on hover
-		keyboard_nav            :   1,			// Keyboard navigation on/off
-		performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
-		image_protect			:	1,			// Disables image dragging and right click with Javascript
+		
+		slideshow               :   1,			
+		autoplay				:	1,			
+		start_slide             :   1,			
+		stop_loop				:	0,			
+		random					: 	0,			
+		slide_interval          :   12000,		
+		transition              :   1, 			
+		transition_speed		:	300,		
+		new_window				:	1,			
+		pause_hover             :   0,			
+		keyboard_nav            :   1,			
+		performance				:	1,			
+		image_protect			:	1,			
 												   
 		// Size & Position						   
-		min_width		        :   0,			// Min width allowed (in pixels)
-		min_height		        :   0,			// Min height allowed (in pixels)
-		vertical_center         :   1,			// Vertically center background
-		horizontal_center       :   1,			// Horizontally center background
-		fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-		fit_portrait         	:   1,			// Portrait images will not exceed browser height
-		fit_landscape			:   0,			// Landscape images will not exceed browser width
+		min_width		        :   0,			
+		min_height		        :   0,			
+		vertical_center         :   1,			
+		horizontal_center       :   1,			
+		fit_always				:	0,			
+		fit_portrait         	:   1,			
+		fit_landscape			:   0,			
 												   
 		// Components							
-		slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
-		thumb_links				:	0,			// Individual thumb links for each slide
-		thumbnail_navigation    :   0,			// Thumbnail navigation
-		slides 					:  	[			// Slideshow Images
+		slide_links				:	'blank',	
+		thumb_links				:	0,			
+		thumbnail_navigation    :   0,			
+		slides 					:  	[			
 											{image : 'intelectual/img/slider-images/image01.PNG', title : '<div class="slide-content">MOD3</div>', thumb : '', url : ''},
 											{image : 'intelectual/img/slider-images/image02.PNG', title : '<div class="slide-content">MOD3</div>', thumb : '', url : ''},
 											{image : 'intelectual/img/slider-images/image03.PNG', title : '<div class="slide-content">MOD3</div>', thumb : '', url : ''},
-											{image : 'intelectual/img/slider-images/image04.PNG', title : '<div class="slide-content">MOD3</div>', thumb : '', url : ''}  
+											{image : 'intelectual/img/slider-images/image04.JPG', title : '<div class="slide-content">MOD3</div>', thumb : '', url : ''}  
 									],
 									
 		// Theme Options			   
@@ -428,3 +428,86 @@ var cat1 = ($("input[@name=q1]:checked").val() != "a");
 
 var cat2 = ($("input[@name=q2]:checked").val() != "b");
 
+$(document).ready(function() 
+{    $("#results").click(function() {                
+
+if (!$("input[@name=q1]:checked").val() ||            
+!$("input[@name=q2]:checked").val() ||            
+!$("input[@name=q3]:checked").val() ||            
+!$("input[@name=q4]:checked").val() ||            
+!$("input[@name=q5]:checked").val() ||            
+!$("input[@name=q6]:checked").val() ||            
+!$("input[@name=q7]:checked").val() ||            
+!$("input[@name=q8]:checked").val() ||            
+!$("input[@name=q9]:checked").val() ||            
+!$("input[@name=q10]:checked").val()            
+) {            
+alert("You're not done yet!");        
+}        
+
+else {            
+var cat1name = "1";            
+var cat2name = "2";            
+var cat3name = "3";            
+var cat4name = "4";            
+var cat5name = "5";            
+var cat6name = "6";            
+var cat7name = "7";            
+var cat8name = "8";            
+var cat9name = "9";            
+var cat10name = "10";            
+var cat11name = "None";            
+            
+
+var cat1 = ($("input[@name=q1]:checked").val() != "a"); 
+           
+var cat2 = ($("input[@name=q2]:checked").val() != "b");  
+
+var cat3 = ($("input[@name=q3]:checked").val() != "c");  
+
+var cat4 = ($("input[@name=q4]:checked").val() != "d");  
+
+var cat5 = ($("input[@name=q5]:checked").val() != "a"); 
+
+var cat6 = ($("input[@name=q6]:checked").val() != "b");  
+
+var cat7 = ($("input[@name=q7]:checked").val() != "c"); 
+
+var cat8 = ($("input[@name=q8]:checked").val() != "d");  
+
+var cat9 = ($("input[@name=q9]:checked").val() != "a"); 
+
+var cat10 = ($("input[@name=q10]:checked").val() != "b");  
+
+var cat11 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10); var categories = [];                        
+
+if (cat1) { categories.push(cat1name) };            
+if (cat2) { categories.push(cat2name) };            
+if (cat3) { categories.push(cat3name) };            
+if (cat4) { categories.push(cat4name) };            
+if (cat5) { categories.push(cat5name) };            
+if (cat6) { categories.push(cat6name) };            
+if (cat7) { categories.push(cat7name) };            
+if (cat8) { categories.push(cat8name) };            
+if (cat9) { categories.push(cat9name) };            
+if (cat10) { categories.push(cat10name) };            
+if (cat11) { categories.push(cat11name) };                        
+
+var catStr = 'You answered the following questions incorrectly: ' + categories.join(', ') + '';                     
+$("#categorylist").text(catStr);                        
+$("#categorylist").show("slow");            
+
+if (cat1) { $("#category1").show("slow"); };            
+if (cat2) { $("#category2").show("slow"); };            
+if (cat3) { $("#category3").show("slow"); };            
+if (cat4) { $("#category4").show("slow"); };            
+if (cat5) { $("#category5").show("slow"); };            
+if (cat6) { $("#category6").show("slow"); };            
+if (cat7) { $("#category7").show("slow"); };            
+if (cat8) { $("#category8").show("slow"); };            
+if (cat9) { $("#category9").show("slow"); };            
+if (cat10) { $("#category10").show("slow"); };            
+if (cat11) { $("#category11").show("slow"); };
+{ $("#closing").show("slow"); };
+}
+    });});
